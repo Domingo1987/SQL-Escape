@@ -1,6 +1,5 @@
 # Documentación de SQL Escape
 
-El presente archivo organiza el contenido de `SQL_Escape_con_ayuda.md` para que resulte más fácil de consultar. La información esencial se mantiene y se agregan referencias a anexos donde se encuentran los scripts SQL y los diagramas UML.
 
 ## 1. Resumen Ejecutivo
 SQL Escape es un videojuego educativo escrito en **Java** cuyo propósito principal es facilitar el aprendizaje de **SQL**. A lo largo de más de diez niveles el jugador debe resolver desafíos utilizando consultas sobre una base de datos ficticia. Cada nivel está integrado en una narrativa que motiva la exploración y fomenta la resolución de problemas.
