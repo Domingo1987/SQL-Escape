@@ -15,15 +15,17 @@ SQL Escape es un videojuego educativo desarrollado en **Java** cuyo objetivo es 
 
 ## Primeros pasos
 1. Clonar este repositorio.
-2. Crear la base de datos `sqlescape` ejecutando el script DDL disponible en [Annex_SQL_Code.md](Annex_SQL_Code.md).
-3. Compilar el proyecto con `mvn package`.
-4. Ejecutar la aplicación según el modo de interfaz implementado (gráfica o de consola).
+2. Crear la base de datos `sqlescape` ejecutando el script DDL de [data.sql](data.sql). El mismo contenido se encuentra descrito en [Annex_SQL_Code.md](Annex_SQL_Code.md).
+3. Generar el ejecutable con `mvn package`.
+4. Ejecutar la interfaz gráfica utilizando el JAR producido en la carpeta `target`.
+
 
 Para obtener un listado detallado de las tareas de instalación y configuración consulte [BuildTasks.md](BuildTasks.md).
 
 ## Documentación
 - [Documentation.md](Documentation.md) resume el proyecto y enlaza a los anexos.
 - [Annex_SQL_Code.md](Annex_SQL_Code.md) contiene el script de base de datos.
+- [data.sql](data.sql) es el script utilizable para crear la base `sqlescape`.
 - [Annex_UML.md](Annex_UML.md) incluye el código PlantUML de los diagramas.
 - [SQL_Escape_con_ayuda.md](SQL_Escape_con_ayuda.md) conserva el documento original.
 

@@ -1,6 +1,5 @@
 # Documentación de SQL Escape
 
-
 ## 1. Resumen Ejecutivo
 SQL Escape es un videojuego educativo escrito en **Java** cuyo propósito principal es facilitar el aprendizaje de **SQL**. A lo largo de más de diez niveles el jugador debe resolver desafíos utilizando consultas sobre una base de datos ficticia. Cada nivel está integrado en una narrativa que motiva la exploración y fomenta la resolución de problemas.
 
@@ -48,6 +47,26 @@ El diagrama completo está disponible en [Annex_UML.md](Annex_UML.md). Incluye c
 
 ### 5.3 Patrones de Diseño
 Se aplican patrones como **Singleton** (para la base de datos), **DAO** y **State** para la gestión del estado del juego.
+
+#### Posibles Patrones Adicionales
+Tras revisar la arquitectura propuesta se identifican otros patrones que
+podrían mejorar la mantenibilidad y la claridad del código:
+
+- **Facade**: proveería una capa simplificada para acceder a las
+  funcionalidades de base de datos y lógica de juego. Sería útil para
+  desacoplar la interfaz de usuario de las clases internas y reducir la
+  complejidad al integrar nuevos módulos.
+- **Modelo–Vista–Controlador (MVC)**: si bien actualmente la aplicación es
+  relativamente pequeña, estructurar la interfaz gráfica siguiendo MVC
+  permitiría separar la lógica de presentación (vistas) de la lógica de
+  juego (modelos) y la coordinación de eventos (controladores). Esto
+  facilitaría futuros cambios de interfaz o la incorporación de pruebas
+  automatizadas sobre los controladores.
+
+Implementar estos patrones implicaría crear clases fachada que agrupen
+operaciones comunes del juego y dividir la interfaz gráfica en vistas y
+controladores. Estas acciones se detallan en el documento
+[`BuildTasks.md`](BuildTasks.md).
 
 ## 6. Análisis de Base de Datos
 ### 6.1 Modelos MER y MR
