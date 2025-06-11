@@ -21,6 +21,7 @@ Este archivo describe los pasos principales para poner en marcha el proyecto SQL
    - Diseñar la interfaz siguiendo el patrón **MVC**, separando controladores,
      modelos y vistas para mejorar la mantenibilidad.
 
+
 4. **Implementar la lógica del juego**
    - Programar los casos de uso principales (iniciar partida, resolver desafío, validar consulta, avanzar de nivel, guardar progreso).
    - Integrar la narrativa y los desafíos por nivel.

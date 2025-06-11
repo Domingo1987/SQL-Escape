@@ -19,6 +19,7 @@ SQL Escape es un videojuego educativo desarrollado en **Java** cuyo objetivo es 
 3. Generar el ejecutable con `mvn package`.
 4. Ejecutar la interfaz gráfica utilizando el JAR producido en la carpeta `target`.
 
+
 Para obtener un listado detallado de las tareas de instalación y configuración consulte [BuildTasks.md](BuildTasks.md).
 
 ## Documentación
