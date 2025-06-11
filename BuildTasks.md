@@ -14,7 +14,12 @@ Este archivo describe los pasos principales para poner en marcha el proyecto SQL
 3. **Estructurar el proyecto Java**
    - Inicializar un proyecto Maven (`mvn archetype:generate`) si no existe uno.
    - Incorporar las clases descritas en el diagrama de clases: `SqlEscapeGame`, `Player`, `Level`, `Challenge`, `SqlEvaluator`, `SqlSyntaxValidator`, `GameDatabase` y los DAO correspondientes.
-   - Aplicar los patrones especificados (Singleton para la base de datos, DAO, State, etc.).
+   - Aplicar los patrones especificados (**Singleton** para la base de datos,
+     **DAO** y **State** para el ciclo del juego).
+   - Evaluar la incorporación del patrón **Facade** para unificar las
+     operaciones de la lógica interna y simplificar el acceso desde la interfaz.
+   - Diseñar la interfaz siguiendo el patrón **MVC**, separando controladores,
+     modelos y vistas para mejorar la mantenibilidad.
 
 4. **Implementar la lógica del juego**
    - Programar los casos de uso principales (iniciar partida, resolver desafío, validar consulta, avanzar de nivel, guardar progreso).
@@ -22,7 +27,7 @@ Este archivo describe los pasos principales para poner en marcha el proyecto SQL
    - Registrar intentos y puntajes en la base de datos.
 
 5. **Construir la interfaz de usuario**
-   - Puede ser textual o gráfica, según la decisión del equipo.
+   - Implementar una interfaz **gráfica** utilizando JavaFX o Swing.
    - Permitir ingresar consultas SQL y mostrar los resultados o mensajes de error de forma clara.
 
 6. **Pruebas y validaciones**
