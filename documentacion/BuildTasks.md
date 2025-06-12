@@ -28,9 +28,9 @@ Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo
 
 ```xml
 <dependency>
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-j</artifactId>
-  <version>8.3.0</version>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.2.0</version>
 </dependency>
 <dependency>
   <groupId>junit</groupId>
