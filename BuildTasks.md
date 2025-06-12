@@ -15,9 +15,7 @@ Este archivo describe los pasos principales para poner en marcha el proyecto SQL
    - Inicializar un proyecto Maven (`mvn archetype:generate`) si no existe uno.
    - Incorporar las clases descritas en el diagrama de clases: `SqlEscapeGame`, `Player`, `Level`, `Challenge`, `SqlEvaluator`, `SqlSyntaxValidator`, `GameDatabase` y los DAO correspondientes.
    - Aplicar los patrones especificados (**Singleton** para la base de datos,
-     **DAO** y **State** para el ciclo del juego).
-   - Evaluar la incorporación del patrón **Facade** para unificar las
-     operaciones de la lógica interna y simplificar el acceso desde la interfaz.
+     **DAO**, **State** y **Facade**) para estructurar la lógica de negocio.
    - Diseñar la interfaz siguiendo el patrón **MVC**, separando controladores,
      modelos y vistas para mejorar la mantenibilidad.
 
