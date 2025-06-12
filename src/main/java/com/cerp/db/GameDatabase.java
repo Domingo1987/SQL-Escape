@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.db;
+package com.cerp.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

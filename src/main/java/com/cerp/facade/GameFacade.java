@@ -1,9 +1,9 @@
-package com.cerp.sqlescape.facade;
+package com.cerp.facade;
 
-import com.cerp.sqlescape.SqlEscapeGame;
-import com.cerp.sqlescape.db.PlayerDAO;
-import com.cerp.sqlescape.db.ProgressDAO;
-import com.cerp.sqlescape.service.EvaluationResult;
+import com.cerp.SqlEscapeGame;
+import com.cerp.db.PlayerDAO;
+import com.cerp.db.ProgressDAO;
+import com.cerp.service.EvaluationResult;
 
 /**
  * Facade that exposes high level operations for the controllers.

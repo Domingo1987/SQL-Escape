@@ -1,7 +1,6 @@
-package com.cerp.sqlescape.service;
+package com.cerp.service;
 
-import com.cerp.sqlescape.db.GameDatabase;
-import com.cerp.sqlescape.model.Challenge;
+import com.cerp.model.Challenge;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

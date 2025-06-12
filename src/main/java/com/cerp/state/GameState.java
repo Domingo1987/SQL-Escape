@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.state;
+package com.cerp.state;
 
 /**
  * Base interface for the State pattern. Each game state handles the

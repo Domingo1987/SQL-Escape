@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.model;
+package com.cerp.model;
 
 /**
  * Simple enumeration for challenge difficulty.

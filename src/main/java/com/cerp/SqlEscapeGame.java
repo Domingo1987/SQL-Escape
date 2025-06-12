@@ -1,13 +1,12 @@
-package com.cerp.sqlescape;
+package com.cerp;
 
-import com.cerp.sqlescape.db.GameDatabase;
-import com.cerp.sqlescape.model.Level;
-import com.cerp.sqlescape.model.Player;
-import com.cerp.sqlescape.service.EvaluationResult;
-import com.cerp.sqlescape.service.SqlEvaluator;
-import com.cerp.sqlescape.service.QueryResult;
-import com.cerp.sqlescape.state.GameState;
-import com.cerp.sqlescape.state.StartState;
+import com.cerp.db.GameDatabase;
+import com.cerp.model.Level;
+import com.cerp.model.Player;
+import com.cerp.service.EvaluationResult;
+import com.cerp.service.SqlEvaluator;
+import com.cerp.state.GameState;
+import com.cerp.state.StartState;
 
 /**
  * Core game class orchestrating players, levels and states.

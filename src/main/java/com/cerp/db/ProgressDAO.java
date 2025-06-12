@@ -1,6 +1,6 @@
-package com.cerp.sqlescape.db;
+package com.cerp.db;
 
-import com.cerp.sqlescape.model.PlayerProgress;
+import com.cerp.model.PlayerProgress;
 
 import java.util.ArrayList;
 import java.util.List;

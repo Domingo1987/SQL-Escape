@@ -1,8 +1,7 @@
-package com.cerp.sqlescape.db;
+package com.cerp.db;
 
-import com.cerp.sqlescape.model.Player;
+import com.cerp.model.Player;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 

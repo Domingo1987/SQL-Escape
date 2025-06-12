@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.model;
+package com.cerp.model;
 
 import java.util.Date;
 

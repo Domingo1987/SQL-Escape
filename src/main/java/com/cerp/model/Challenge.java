@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.model;
+package com.cerp.model;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;

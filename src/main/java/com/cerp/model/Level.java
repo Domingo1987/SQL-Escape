@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.model;
+package com.cerp.model;
 
 /**
  * Represents a level of the game containing a challenge and narrative.

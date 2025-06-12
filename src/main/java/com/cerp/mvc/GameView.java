@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.mvc;
+package com.cerp.mvc;
 
 import java.util.Scanner;
 

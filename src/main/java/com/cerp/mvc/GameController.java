@@ -1,7 +1,7 @@
-package com.cerp.sqlescape.mvc;
+package com.cerp.mvc;
 
-import com.cerp.sqlescape.facade.GameFacade;
-import com.cerp.sqlescape.service.EvaluationResult;
+import com.cerp.facade.GameFacade;
+import com.cerp.service.EvaluationResult;
 
 /**
  * Controller part of the MVC architecture.

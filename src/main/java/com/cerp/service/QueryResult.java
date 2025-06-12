@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.service;
+package com.cerp.service;
 
 import java.sql.ResultSet;
 

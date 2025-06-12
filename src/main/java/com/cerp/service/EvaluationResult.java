@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.service;
+package com.cerp.service;
 
 /**
  * Represents the result of evaluating a player's query against a challenge.

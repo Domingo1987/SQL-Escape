@@ -1,4 +1,4 @@
-package com.cerp.sqlescape.state;
+package com.cerp.state;
 
 /**
  * State when the game has not begun yet.
