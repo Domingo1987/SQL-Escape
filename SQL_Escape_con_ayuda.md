@@ -909,9 +909,13 @@ package "SQL Escape Game" {
 
 * **State:** El estado del juego (gameState) puede ser manejado con el patrón State para gestionar transiciones complejas (ej. Playing, Paused, Finished).
 
-* Facade ver
+* **Facade:** se introduce una clase `GameFacade` que agrupa la lógica del juego
+  y el acceso a la base de datos, ofreciendo un único punto de entrada para los
+  controladores y la interfaz.
 
-* MVC ver
+* **Modelo–Vista–Controlador (MVC):** la aplicación separa las vistas y los
+  controladores del modelo. De esta forma es posible modificar la interfaz o
+  agregar pruebas sin afectar la lógica de negocio.
 
 # **2 Descripción general**  {#2-descripción-general}
 

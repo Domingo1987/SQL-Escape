@@ -213,6 +213,28 @@ package "SQL Escape Game" {
         + save(progress: PlayerProgress): boolean
         + update(progress: PlayerProgress): boolean
     }
+    class GameFacade {
+        - game: SqlEscapeGame
+        - playerDAO: PlayerDAO
+        - progressDAO: ProgressDAO
+        + startGame(): void
+        + loadPlayer(id: int): void
+        + processQuery(query: String): EvaluationResult
+    }
+    class GameController {
+        - facade: GameFacade
+        + handleQuery(query: String): void
+        + showLevel(): void
+    }
+    class GameView {
+        + displayMessage(msg: String): void
+        + getUserQuery(): String
+    }
+    GameController --> GameFacade
+    GameController --> GameView
+    GameFacade --> SqlEscapeGame
+    GameFacade --> PlayerDAO
+    GameFacade --> ProgressDAO
 }
 ```
 

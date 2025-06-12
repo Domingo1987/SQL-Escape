@@ -7,6 +7,8 @@ SQL Escape es un videojuego educativo desarrollado en **Java** cuyo objetivo es 
 - Validación automática de las respuestas ingresadas.
 - Registro de progreso y puntuación del jugador.
 - Diseño orientado a objetos y arquitectura modular.
+- Uso de patrones de diseño **DAO**, **Facade** y **MVC** para una estructura
+  clara y extensible.
 
 ## Requisitos de desarrollo
 - **JDK 17** o superior

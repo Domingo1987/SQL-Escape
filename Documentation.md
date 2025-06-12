@@ -46,26 +46,20 @@ El diagrama completo está disponible en [Annex_UML.md](Annex_UML.md). Incluye c
 - **GameDatabase y DAO:** gestionan la conexión y las operaciones sobre la base de datos.
 
 ### 5.3 Patrones de Diseño
-Se aplican patrones como **Singleton** (para la base de datos), **DAO** y **State** para la gestión del estado del juego.
+Se aplican patrones como **Singleton** (para la base de datos), **DAO**, **Facade** y **MVC** junto al patrón **State** para estructurar la lógica y la interfaz.
 
-#### Posibles Patrones Adicionales
-Tras revisar la arquitectura propuesta se identifican otros patrones que
-podrían mejorar la mantenibilidad y la claridad del código:
+#### Patrones Implementados
+El proyecto incorpora de manera efectiva los siguientes patrones:
 
-- **Facade**: proveería una capa simplificada para acceder a las
-  funcionalidades de base de datos y lógica de juego. Sería útil para
-  desacoplar la interfaz de usuario de las clases internas y reducir la
-  complejidad al integrar nuevos módulos.
-- **Modelo–Vista–Controlador (MVC)**: si bien actualmente la aplicación es
-  relativamente pequeña, estructurar la interfaz gráfica siguiendo MVC
-  permitiría separar la lógica de presentación (vistas) de la lógica de
-  juego (modelos) y la coordinación de eventos (controladores). Esto
-  facilitaría futuros cambios de interfaz o la incorporación de pruebas
-  automatizadas sobre los controladores.
+- **Facade**: la clase `GameFacade` centraliza la lógica principal y actúa
+  como punto de acceso único para la interfaz y los controladores.
+- **Modelo–Vista–Controlador (MVC)**: la interfaz se divide en vistas y
+  controladores que utilizan la fachada y las clases de modelo, lo que
+  facilita futuras ampliaciones y pruebas automatizadas.
 
-Implementar estos patrones implicaría crear clases fachada que agrupen
-operaciones comunes del juego y dividir la interfaz gráfica en vistas y
-controladores. Estas acciones se detallan en el documento
+La aplicación también mantiene la implementación del patrón **DAO** para la
+persistencia y utiliza **Singleton** en la conexión a la base de datos. Para un
+detalle de cómo integrarlos durante el desarrollo consulte el documento
 [`BuildTasks.md`](BuildTasks.md).
 
 ## 6. Análisis de Base de Datos
