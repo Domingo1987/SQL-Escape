@@ -21,9 +21,26 @@ Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo
    - Ejecutar `insert.sql` si se desean registros de muestra en **sqlescape**.
 
 5. **Iniciar un proyecto Maven**
-   - Ejecutar `mvn archetype:generate` y definir `src/main/java` como carpeta de código.
-   - Añadir al `pom.xml` la dependencia del conector MySQL y cualquier otra biblioteca necesaria (por ejemplo JUnit para pruebas).
-   - Configurar un archivo `src/main/resources/db.properties` con la URL de conexión (`jdbc:mysql://localhost/sqlescape`), usuario y contraseña de MySQL.
+   - Ejecutar el siguiente comando para generar la estructura basica:
+     `mvn archetype:generate -DgroupId=com.example -DartifactId=sql-escape -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
+     Verificar que el codigo fuente quede en `src/main/java`.
+   - Anadir al `pom.xml` la dependencia del conector MySQL y JUnit para las pruebas:
+
+```xml
+<dependency>
+  <groupId>mysql</groupId>
+  <artifactId>mysql-connector-j</artifactId>
+  <version>8.3.0</version>
+</dependency>
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.13.2</version>
+  <scope>test</scope>
+</dependency>
+```
+   - Crear `src/main/resources/db.properties` con la URL `jdbc:mysql://localhost/sqlescape` y las credenciales de MySQL.
+
 
 6. **Diseñar la estructura Java**
    - Crear las clases descritas en `Annex_UML.md`: `SqlEscapeGame`, `Player`, `Level`, `Challenge`, `SqlEvaluator`, `SqlSyntaxValidator`, `GameDatabase` y sus DAO.
