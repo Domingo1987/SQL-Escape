@@ -72,6 +72,32 @@ CREATE TABLE NAVEGACION (
     FOREIGN KEY (nro_barco) REFERENCES BARCO(nro_barco),
     FOREIGN KEY (nombre) REFERENCES ISLA(nombre)
 );
+
+-- Base dedicada a las narrativas de los niveles
+CREATE DATABASE IF NOT EXISTS narrativa;
+
+USE narrativa;
+
+CREATE TABLE NIVEL (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    numero INT NOT NULL UNIQUE,
+    titulo VARCHAR(100) NOT NULL,
+    narrativa TEXT,
+    pregunta TEXT NOT NULL
+);
+
+CREATE TABLE SOLUCION (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nivel_id INT NOT NULL,
+    consulta VARCHAR(500) NOT NULL,
+    FOREIGN KEY (nivel_id) REFERENCES NIVEL(id)
+);
+
+CREATE TABLE CONSULTA_PREDEFINIDA (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL UNIQUE,
+    consulta VARCHAR(500) NOT NULL
+);
 ```
 
 ## Operaciones DML
