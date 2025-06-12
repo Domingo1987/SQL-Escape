@@ -4,7 +4,7 @@ INSERT INTO NIVEL (numero, titulo, narrativa, pregunta) VALUES
      'Despiertas en la sala de control de un barco abandonado. Debes resolver una consulta SQL para abrir la puerta.',
      '¿Cuántos marineros hay registrados?');
 
-INSERT INTO SOLUCION (nivel_id, consulta) VALUES
+INSERT INTO CONSULTA (nivel_id, consulta) VALUES
     (1, 'SELECT COUNT(*) FROM MARINERO;'),
     (1, 'SELECT COUNT(id) FROM MARINERO;');
 
