@@ -3,9 +3,10 @@
 Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo con MySQL/XAMPP a partir de un entorno limpio. Cada punto puede ejecutarse inmediatamente después del anterior.
 
 1. **Preparar el entorno**
-   - Instalar **JDK 17** o superior.
-   - Instalar **Maven** para la gestión del proyecto.
-   - Instalar **XAMPP** (o MySQL equivalente) y asegurarse de que el servidor está en funcionamiento.
+   - Instalar **JDK 17** o superior y verificarlo con `java -version`.
+   - Instalar **Maven** para la gestión del proyecto (`mvn -version`).
+   - Instalar **XAMPP** (o MySQL equivalente).
+   - Iniciar el servicio **MySQL** desde el panel de control de XAMPP y comprobar que responde en `localhost:3306`.
 
 2. **Clonar el repositorio**
    - Obtener los archivos de este proyecto ejecutando `git clone` sobre el repositorio.
@@ -22,6 +23,7 @@ Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo
 5. **Iniciar un proyecto Maven**
    - Ejecutar `mvn archetype:generate` y definir `src/main/java` como carpeta de código.
    - Añadir al `pom.xml` la dependencia del conector MySQL y cualquier otra biblioteca necesaria (por ejemplo JUnit para pruebas).
+   - Configurar un archivo `src/main/resources/db.properties` con la URL de conexión (`jdbc:mysql://localhost/sqlescape`), usuario y contraseña de MySQL.
 
 6. **Diseñar la estructura Java**
    - Crear las clases descritas en `Annex_UML.md`: `SqlEscapeGame`, `Player`, `Level`, `Challenge`, `SqlEvaluator`, `SqlSyntaxValidator`, `GameDatabase` y sus DAO.
@@ -38,8 +40,9 @@ Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo
    - Escribir pruebas unitarias para las clases principales y validar que el progreso se persiste correctamente.
 
 10. **Compilar y ejecutar**
-    - Ejecutar `mvn package` para generar el JAR.
-    - Probar que la aplicación inicia y que se cargan los niveles sin errores.
+    - Ejecutar `mvn clean package` para compilar y generar el JAR.
+    - Iniciar la aplicación con `java -jar target/NombreDelJar.jar`.
+    - Probar que los niveles se cargan sin errores y que se conecta a la base de datos.
 
 11. **Documentar ajustes finales**
     - Registrar cualquier configuración adicional realizada durante la instalación o ejecución.
