@@ -9,7 +9,8 @@ Este archivo describe los pasos principales para poner en marcha el proyecto SQL
 
 2. **Configurar la base de datos**
    - Crear la base `sqlescape` ejecutando los scripts DDL incluidos en la documentación.
-   - Verificar que las tablas `MARINERO`, `BARCO`, `ISLA`, `SENSOR`, `REGISTRO_COMBUSTIBLE`, `TRIPULANTE` y `NAVEGACION` estén correctamente creadas.
+   - Crear también la base `narrativa` con el script `narrativa.sql` y cargar datos de ejemplo con `narrativa_insert.sql`.
+   - Verificar que las tablas `MARINERO`, `BARCO`, `ISLA`, `SENSOR`, `REGISTRO_COMBUSTIBLE`, `TRIPULANTE`, `NAVEGACION`, `NIVEL`, `SOLUCION` y `CONSULTA_PREDEFINIDA` estén correctamente creadas.
 
 3. **Estructurar el proyecto Java**
    - Inicializar un proyecto Maven (`mvn archetype:generate`) si no existe uno.
