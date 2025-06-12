@@ -41,6 +41,7 @@ Este archivo detalla de forma secuencial cómo levantar el proyecto y conectarlo
 ```
    - Crear `src/main/resources/db.properties` con la URL `jdbc:mysql://localhost/sqlescape` y las credenciales de MySQL.
 
+
 6. **Diseñar la estructura Java**
    - Crear las clases descritas en `Annex_UML.md`: `SqlEscapeGame`, `Player`, `Level`, `Challenge`, `SqlEvaluator`, `SqlSyntaxValidator`, `GameDatabase` y sus DAO.
    - Aplicar los patrones **Singleton** (conexión), **DAO**, **State**, **Facade** y **MVC**.
