@@ -4,9 +4,11 @@ import com.cerp.SqlEscapeGame;
 import com.cerp.db.GameDatabase;
 import com.cerp.db.PlayerDAO;
 import com.cerp.db.ProgressDAO;
+import com.cerp.db.LevelDAO;
 import com.cerp.facade.GameFacade;
 import com.cerp.mvc.GameController;
 import com.cerp.mvc.GameView;
+import com.cerp.mvc.SwingGameView;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -45,8 +47,9 @@ public class App
                 SqlEscapeGame game = new SqlEscapeGame(db);
                 PlayerDAO playerDAO = new PlayerDAO(db);
                 ProgressDAO progressDAO = new ProgressDAO(db);
-                GameFacade facade = new GameFacade(game, playerDAO, progressDAO);
-                GameView view = new GameView();
+                LevelDAO levelDAO = new LevelDAO(db);
+                GameFacade facade = new GameFacade(game, playerDAO, progressDAO, levelDAO);
+                GameView view = new SwingGameView();
                 GameController controller = new GameController(facade, view);
 
                 facade.startGame();

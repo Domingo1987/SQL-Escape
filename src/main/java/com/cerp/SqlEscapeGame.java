@@ -39,6 +39,10 @@ public class SqlEscapeGame {
         return currentLevel;
     }
 
+    public void setCurrentLevel(Level level) {
+        this.currentLevel = level;
+    }
+
     public EvaluationResult processPlayerInput(String query) {
         // Evaluate query
         return sqlEvaluator.evaluateChallenge(query, currentLevel.getChallenge());

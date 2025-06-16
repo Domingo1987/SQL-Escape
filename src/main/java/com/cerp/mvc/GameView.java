@@ -1,5 +1,6 @@
 package com.cerp.mvc;
 
+import com.cerp.model.Level;
 import java.util.Scanner;
 
 /**
@@ -14,5 +15,11 @@ public class GameView {
 
     public String getUserQuery() {
         return scanner.nextLine();
+    }
+
+    public void showLevel(Level level) {
+        displayMessage(level.getTitle());
+        displayMessage(level.getNarrative());
+        displayMessage(level.getChallenge().getDescription());
     }
 }

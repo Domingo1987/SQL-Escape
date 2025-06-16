@@ -34,8 +34,16 @@ public class Level {
         return narrative;
     }
 
+    public void setNarrative(String narrative) {
+        this.narrative = narrative;
+    }
+
     public Challenge getChallenge() {
         return challenge;
+    }
+
+    public void setChallenge(Challenge challenge) {
+        this.challenge = challenge;
     }
 
     public boolean isAccessible(int playerLevel) {
