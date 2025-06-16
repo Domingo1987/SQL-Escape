@@ -3,6 +3,8 @@ package com.cerp.facade;
 import com.cerp.SqlEscapeGame;
 import com.cerp.db.PlayerDAO;
 import com.cerp.db.ProgressDAO;
+import com.cerp.db.LevelDAO;
+import com.cerp.model.Level;
 import com.cerp.service.EvaluationResult;
 
 /**
@@ -12,11 +14,13 @@ public class GameFacade {
     private SqlEscapeGame game;
     private PlayerDAO playerDAO;
     private ProgressDAO progressDAO;
+    private LevelDAO levelDAO;
 
-    public GameFacade(SqlEscapeGame game, PlayerDAO playerDAO, ProgressDAO progressDAO) {
+    public GameFacade(SqlEscapeGame game, PlayerDAO playerDAO, ProgressDAO progressDAO, LevelDAO levelDAO) {
         this.game = game;
         this.playerDAO = playerDAO;
         this.progressDAO = progressDAO;
+        this.levelDAO = levelDAO;
     }
 
     public void startGame() {
@@ -29,5 +33,13 @@ public class GameFacade {
 
     public EvaluationResult processQuery(String query) {
         return game.processPlayerInput(query);
+    }
+
+    public Level loadLevel(int number) {
+        Level level = levelDAO.findByNumber(number);
+        if (level != null) {
+            game.setCurrentLevel(level);
+        }
+        return level;
     }
 }
