@@ -32,20 +32,27 @@ public class App {
             return;
         }
 
-        String url = props.getProperty("url");
+        String url_narrativa = props.getProperty("url_narrativa");
+        String url_sqlescape = props.getProperty("url_sqlescape");
         String user = props.getProperty("user");
         String pass = props.getProperty("password");
 
-        GameDatabase db = GameDatabase.getInstance(url, user, pass);
-        if (!db.connect()) {
+        GameDatabase db_narrativa = GameDatabase.getInstance(url_narrativa, user, pass);
+        if (!db_narrativa.connect()) {
             System.out.println("No se pudo conectar a la base de datos.");
             return;
         }
 
-        SqlEscapeGame game = new SqlEscapeGame(db);
-        PlayerDAO playerDAO = new PlayerDAO(db);
-        ProgressDAO progressDAO = new ProgressDAO(db);
-        LevelDAO levelDAO = new LevelDAO(db);
+        GameDatabase db_sqlescape = GameDatabase.getInstance(url_sqlescape, user, pass);
+        if (!db_sqlescape.connect()) {
+            System.out.println("No se pudo conectar a la base de datos.");
+            return;
+        }
+
+        SqlEscapeGame game = new SqlEscapeGame(db_sqlescape);
+        PlayerDAO playerDAO = new PlayerDAO(db_narrativa);
+        ProgressDAO progressDAO = new ProgressDAO(db_narrativa);
+        LevelDAO levelDAO = new LevelDAO(db_narrativa);
         GameFacade facade = new GameFacade(game, playerDAO, progressDAO, levelDAO);
         GameView view = new SwingGameView();
         GameController controller = new GameController(facade, view);

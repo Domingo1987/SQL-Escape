@@ -42,6 +42,7 @@ public class GameFacade {
     public Level loadLevel(int number) {
         Logger.log("GameFacade.loadLevel");
         Level level = levelDAO.findByNumber(number);
+        Logger.log("TEST"+ level.toString());
         if (level != null) {
             game.setCurrentLevel(level);
         }
