@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import com.cerp.Logger;
 
 /**
  * Singleton that manages the database connection used by the game.
@@ -29,6 +30,7 @@ public class GameDatabase {
     }
 
     public boolean connect() {
+        Logger.log("GameDatabase.connect");
         try {
             connection = DriverManager.getConnection(connectionUrl, username, password);
             return true;
@@ -38,6 +40,7 @@ public class GameDatabase {
     }
 
     public void disconnect() {
+        Logger.log("GameDatabase.disconnect");
         try {
             if (connection != null) {
                 connection.close();
@@ -48,6 +51,7 @@ public class GameDatabase {
     }
 
     public ResultSet executeQuery(String sql) {
+        Logger.log("GameDatabase.executeQuery");
         try {
             Statement stmt = connection.createStatement();
             return stmt.executeQuery(sql);
@@ -57,6 +61,7 @@ public class GameDatabase {
     }
 
     public int executeUpdate(String sql) {
+        Logger.log("GameDatabase.executeUpdate");
         try (Statement stmt = connection.createStatement()) {
             return stmt.executeUpdate(sql);
         } catch (Exception e) {
@@ -65,10 +70,12 @@ public class GameDatabase {
     }
 
     public Connection getConnection() {
+        Logger.log("GameDatabase.getConnection");
         return connection;
     }
 
     public boolean isConnected() {
+        Logger.log("GameDatabase.isConnected");
         return connection != null;
     }
 }

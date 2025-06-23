@@ -2,6 +2,7 @@ package com.cerp.db;
 
 import com.cerp.model.Challenge;
 import com.cerp.model.Level;
+import com.cerp.Logger;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -13,10 +14,12 @@ public class LevelDAO {
     private final GameDatabase database;
 
     public LevelDAO(GameDatabase database) {
+        Logger.log("LevelDAO.<init>");
         this.database = database;
     }
 
     public Level findByNumber(int number) {
+        Logger.log("LevelDAO.findByNumber");
         String sql = "SELECT id, numero, titulo, narrativa, pregunta FROM NIVEL WHERE numero = " + number + " LIMIT 1";
         try (Statement stmt = database.getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {

@@ -1,6 +1,7 @@
 package com.cerp.mvc;
 
 import com.cerp.model.Level;
+import com.cerp.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,7 @@ public class SwingGameView extends GameView {
     private JButton submitButton;
 
     public SwingGameView() {
+        Logger.log("SwingGameView.<init>");
         frame = new JFrame("SQL Escape");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
@@ -40,11 +42,13 @@ public class SwingGameView extends GameView {
 
     @Override
     public void displayMessage(String msg) {
+        Logger.log("SwingGameView.displayMessage");
         outputArea.setText(msg);
     }
 
     @Override
     public void showLevel(Level level) {
+        Logger.log("SwingGameView.showLevel");
         StringBuilder sb = new StringBuilder();
         sb.append("Nivel ").append(level.getNumber()).append(" - ")
           .append(level.getTitle()).append("\n\n")
@@ -56,6 +60,7 @@ public class SwingGameView extends GameView {
 
     @Override
     public String getUserQuery() {
+        Logger.log("SwingGameView.getUserQuery");
         CountDownLatch latch = new CountDownLatch(1);
         final String[] result = new String[1];
         submitButton.addActionListener(e -> {

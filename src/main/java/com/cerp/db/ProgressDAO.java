@@ -1,6 +1,7 @@
 package com.cerp.db;
 
 import com.cerp.model.PlayerProgress;
+import com.cerp.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +17,22 @@ public class ProgressDAO {
     }
 
     public List<PlayerProgress> findByPlayer(int playerId) {
+        Logger.log("ProgressDAO.findByPlayer");
         return new ArrayList<>();
     }
 
     public List<PlayerProgress> findByLevel(int levelId) {
+        Logger.log("ProgressDAO.findByLevel");
         return new ArrayList<>();
     }
 
     public boolean save(PlayerProgress progress) {
+        Logger.log("ProgressDAO.save");
         return false;
     }
 
     public boolean update(PlayerProgress progress) {
+        Logger.log("ProgressDAO.update");
         return false;
     }
 }

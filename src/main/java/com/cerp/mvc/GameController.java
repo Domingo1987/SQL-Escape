@@ -3,6 +3,7 @@ package com.cerp.mvc;
 import com.cerp.facade.GameFacade;
 import com.cerp.service.EvaluationResult;
 import com.cerp.model.Level;
+import com.cerp.Logger;
 
 /**
  * Controller part of the MVC architecture.
@@ -17,11 +18,13 @@ public class GameController {
     }
 
     public void handleQuery(String query) {
+        Logger.log("GameController.handleQuery");
         EvaluationResult result = facade.processQuery(query);
         view.displayMessage(result.getFeedback());
     }
 
     public void showLevel() {
+        Logger.log("GameController.showLevel");
         Level level = facade.loadLevel(1);
         if (level != null) {
             view.showLevel(level);
