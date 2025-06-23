@@ -1,4 +1,4 @@
-#Fundamentación del contexto narrativo
+# Fundamentación del contexto narrativo
 
 El proyecto SQL Escape se estructura a partir de una narrativa inmersiva que combina el aprendizaje técnico de SQL con una experiencia de juego de rol. Esta integración entre narrativa y contenido técnico tiene como objetivo principal fomentar la motivación, el razonamiento y la toma de decisiones a partir de un contexto ficcional que da sentido a cada consulta de datos.
 
