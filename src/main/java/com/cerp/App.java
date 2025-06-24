@@ -9,6 +9,7 @@ import com.cerp.facade.GameFacade;
 import com.cerp.mvc.GameController;
 import com.cerp.mvc.GameView;
 import com.cerp.mvc.SwingGameView;
+import com.cerp.mvc.TestGameView;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -56,16 +57,18 @@ public class App {
         ProgressDAO progressDAO = new ProgressDAO(db_narrativa);
         LevelDAO levelDAO = new LevelDAO(db_narrativa);
         GameFacade facade = new GameFacade(game, playerDAO, progressDAO, levelDAO);
-        GameView view = new SwingGameView();
+        //GameView view = new SwingGameView();
+        GameView view = new TestGameView();
 
         GameController controller = new GameController(facade, view);
 
         facade.startGame();
-        view.displayMessage("Juego iniciado. ¡Buena suerte!");
+        //view.displayMessage("Juego iniciado. ¡Buena suerte!");
         controller.showLevel();
 
-        view.displayMessage("Ingresa tu consulta:");
+        //view.displayMessage("Ingresa tu consulta:");
         String query = view.getUserQuery();
+        Logger.logRed(query);
         controller.handleQuery(query);
 
         game.exitGame();

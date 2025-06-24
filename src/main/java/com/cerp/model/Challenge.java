@@ -28,6 +28,11 @@ public class Challenge {
         return description;
     }
 
+    public String getExpectedQuery(){
+        Logger.log("Challenge.getExpectedQuery");
+        return expectedQuery;
+    }
+
     public ResultSet getExpectedResult() {
         Logger.log("Challenge.getExpectedResult");
         return expectedResult;

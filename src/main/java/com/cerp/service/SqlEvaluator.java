@@ -42,10 +42,21 @@ public class SqlEvaluator {
 
     public EvaluationResult evaluateChallenge(String query, Challenge challenge) {
         Logger.log("SqlEvaluator.evaluateChallenge");
+        String res = challenge.getExpectedQuery();
+        Logger.logRed(res);
         ValidationResult validation = validateQuery(query);
         QueryResult result = executeQuery(query);
-        EvaluationResult eval = new EvaluationResult(true, challenge.getPoints());
-        eval.setFeedback("OK");
+        EvaluationResult eval;
+        if (validation.isValid() && result.isSuccessful()) {
+
+            eval = new EvaluationResult(true, challenge.getPoints());
+            eval.setFeedback("correcto");
+        }
+        else {
+            eval = new EvaluationResult(false, 0);
+            eval.setFeedback("BURRO");
+
+        }
         return eval;
     }
 
