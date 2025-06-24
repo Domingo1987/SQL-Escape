@@ -114,15 +114,15 @@ INSERT INTO CONSULTA_PREDEFINIDA (nombre, consulta) VALUES
 
 INSERT INTO NIVEL (numero, titulo, narrativa, pregunta) VALUES
 (6,
- 'El Código del Ingeniero',
+ 'El Código del Capitan',
  'La sala de planos está en penumbras. Sobre una mesa metálica, hay planos técnicos firmados por diferentes marineros. Un mensaje en la pared dice:\n"Quien diseña, deja su firma."',
- 'Desafío:\nMostrá los nombres de los marineros cuya descripción contenga la palabra "Ingeniero".'
+ 'Desafío:\nMostrá los nombres de los marineros cuya descripción contenga la palabra "Capitan".'
 );
 
 INSERT INTO CONSULTA (nivel_id, consulta) VALUES
-(6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Ingeniero%'';'),
-(6, 'SELECT M.nombre FROM MARINERO M WHERE M.descripcion LIKE ''%Ingeniero%'';'),
-(6, 'SELECT nombre FROM MARINERO WHERE LOWER(descripcion) LIKE ''%ingeniero%'';'),
+(6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Capitan%'';'),
+(6, 'SELECT M.nombre FROM MARINERO M WHERE M.descripcion LIKE ''%Capitan%'';'),
+(6, 'SELECT nombre FROM MARINERO WHERE LOWER(descripcion) LIKE ''%Capitan%'';'),
 (6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Ingeniero%'' ORDER BY nombre ASC;');
 
 INSERT INTO CONSULTA_PREDEFINIDA (nombre, consulta) VALUES
