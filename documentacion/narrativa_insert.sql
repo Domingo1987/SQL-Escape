@@ -123,7 +123,7 @@ INSERT INTO CONSULTA (nivel_id, consulta) VALUES
 (6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Capitan%'';'),
 (6, 'SELECT M.nombre FROM MARINERO M WHERE M.descripcion LIKE ''%Capitan%'';'),
 (6, 'SELECT nombre FROM MARINERO WHERE LOWER(descripcion) LIKE ''%Capitan%'';'),
-(6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Ingeniero%'' ORDER BY nombre ASC;');
+(6, 'SELECT nombre FROM MARINERO WHERE descripcion LIKE ''%Capitan%'' ORDER BY nombre ASC;');
 
 INSERT INTO CONSULTA_PREDEFINIDA (nombre, consulta) VALUES
 ('LISTAR_TABLAS', 'SHOW TABLES;'),
