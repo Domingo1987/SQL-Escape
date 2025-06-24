@@ -19,6 +19,7 @@ import java.util.Properties;
 public class App {
     public static void main(String[] args) {
         Logger.log("App.main");
+
         Properties props = new Properties();
         try (InputStream in = App.class.getClassLoader().getResourceAsStream("db.properties")) {
             if (in != null) {
@@ -39,6 +40,7 @@ public class App {
 
         GameDatabase db_narrativa = GameDatabase.getInstance(url_narrativa, user, pass);
         if (!db_narrativa.connect()) {
+
             System.out.println("No se pudo conectar a la base de datos.");
             return;
         }
@@ -55,6 +57,7 @@ public class App {
         LevelDAO levelDAO = new LevelDAO(db_narrativa);
         GameFacade facade = new GameFacade(game, playerDAO, progressDAO, levelDAO);
         GameView view = new SwingGameView();
+
         GameController controller = new GameController(facade, view);
 
         facade.startGame();
@@ -68,3 +71,4 @@ public class App {
         game.exitGame();
     }
 }
+
