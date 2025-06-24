@@ -1,7 +1,9 @@
 INSERT INTO NIVEL (numero, titulo, narrativa, pregunta) VALUES
     (1,
      'Bienvenida',
-     'Despiertas en la sala de control de un barco abandonado. Debes resolver una consulta SQL para abrir la puerta.',
+     'Despiertas en la sala de control de un barco abandonado.
+      Todo está oscuro y polvoriento. Las luces parpadean mientras un panel digital te muestra un mensaje: 
+      “Consulta los registros del personal para abrir la compuerta principal”. Debes resolver una consulta SQL para continuar...',
      '¿Cuántos marineros hay registrados?');
 
 INSERT INTO CONSULTA (nivel_id, consulta) VALUES
