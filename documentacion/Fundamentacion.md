@@ -1,6 +1,7 @@
 # Nivel 1 – Bienvenida
 **Contexto narrativo:**
 Despiertas en la sala de control de un barco abandonado. Todo está oscuro y polvoriento. Las luces parpadean mientras un panel digital te muestra un mensaje: “Consulta los registros del personal para abrir la compuerta principal”. Debes resolver una consulta SQL para continuar.
+
 **Fundamentación pedagógica:**
 Este primer nivel está diseñado para introducir al jugador en el entorno del juego de manera sencilla pero con una intención significativa y contextualizada. La consulta solicitada —“¿cuántos marineros hay registrados?”— exige el uso de la instrucción SELECT COUNT(*), que pertenece al sublenguaje DQL (Data Query Language) de SQL. Este sublenguaje se utiliza específicamente para realizar consultas que extraen información de la base de datos sin alterarla, lo cual resulta ideal en una etapa inicial de exploración y reconocimiento.
 Se opta por COUNT(*) porque permite al jugador obtener una visión cuantitativa del contenido de una tabla, sin necesidad de conocer su estructura interna ni campos específicos. Esta acción simula un proceso lógico y realista: si un jugador despierta en un entorno desconocido y deshabitado, lo primero que intentaría saber es cuántas personas estuvieron allí antes. Traducido al mundo de las bases de datos, eso equivale a contar los registros existentes.
