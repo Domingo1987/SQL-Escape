@@ -1,6 +1,7 @@
 package com.cerp.facade;
 
 import com.cerp.SqlEscapeGame;
+import com.cerp.Logger;
 import com.cerp.db.PlayerDAO;
 import com.cerp.db.ProgressDAO;
 import com.cerp.db.LevelDAO;
@@ -24,19 +25,24 @@ public class GameFacade {
     }
 
     public void startGame() {
+        Logger.log("GameFacade.startGame");
         game.startGame();
     }
 
     public void loadPlayer(int id) {
+        Logger.log("GameFacade.loadPlayer");
         game.loadGame(id);
     }
 
     public EvaluationResult processQuery(String query) {
+        Logger.log("GameFacade.processQuery");
         return game.processPlayerInput(query);
     }
 
     public Level loadLevel(int number) {
+        Logger.log("GameFacade.loadLevel");
         Level level = levelDAO.findByNumber(number);
+        Logger.log("TEST"+ level.toString());
         if (level != null) {
             game.setCurrentLevel(level);
         }
