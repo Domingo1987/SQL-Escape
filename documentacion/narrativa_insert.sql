@@ -112,7 +112,6 @@ INSERT INTO NIVEL (numero, titulo, narrativa, pregunta) VALUES
 INSERT INTO CONSULTA (nivel_id, consulta) VALUES
 (8, 'SELECT nombre, habitantes FROM ISLA;'),
 (8, 'SELECT I.nombre, I.habitantes FROM ISLA I;'),
-(8, 'SELECT nombre, habitantes FROM ISLA WHERE puerto = TRUE;'),
 (8, 'SELECT nombre, habitantes FROM ISLA ORDER BY habitantes DESC;');
 
 
