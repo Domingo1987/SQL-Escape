@@ -13,6 +13,7 @@ public class Level {
     private Challenge challenge;
     private boolean isUnlocked;
     private int requiredLevel;
+    private String feedback;
 
     public Level(int id, int number, String title) {
         Logger.log("Level.<init>");
@@ -64,5 +65,13 @@ public class Level {
     public void unlock() {
         Logger.log("Level.unlock");
         this.isUnlocked = true;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 }

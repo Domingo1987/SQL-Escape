@@ -58,4 +58,7 @@ public class QueryResult {
     public String getResult() {
         return result;
     }
+
+    public void setResultSet(ResultSet resultSet){ this.resultSet = resultSet;}
 }
+

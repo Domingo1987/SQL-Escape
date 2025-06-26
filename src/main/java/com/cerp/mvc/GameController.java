@@ -26,8 +26,9 @@ public class GameController {
     public void handleQuery(String query) throws SQLException {
         Logger.log(query);
         EvaluationResult result = facade.processQuery(query);
-        view.displayMessage(result.getFeedback());
-        view.displayMessage(result.getQueryResult().getResult());
+        view.showOutput (facade.getGame().getCurrentLevel(), result);
+        Logger.logGreen(facade.getGame().getCurrentLevel().getFeedback());
+
     }
 
 

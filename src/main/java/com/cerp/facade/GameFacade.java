@@ -60,4 +60,8 @@ public class GameFacade {
 
         return level;
     }
+
+    public SqlEscapeGame getGame() {
+        return game;
+    }
 }

@@ -34,7 +34,7 @@ public class LevelDAO {
             return null;
         }
 
-        String sql = "SELECT id, numero, titulo, narrativa, pregunta FROM NIVEL WHERE numero = " + number + " LIMIT 1";
+        String sql = "SELECT id, numero, titulo, narrativa, pregunta, feedback FROM NIVEL WHERE numero = " + number + " LIMIT 1";
         Logger.log("Ejecutando SQL: " + sql);
 
         try (Statement stmt = database.getConnection().createStatement();
@@ -55,6 +55,7 @@ public class LevelDAO {
                 int id = rs.getInt("id");
                 Level level = new Level(id, rs.getInt("numero"), rs.getString("titulo"));
                 level.setNarrative(rs.getString("narrativa"));
+                level.setFeedback(rs.getString("feedback"));
 
                 // Crear challenge con la pregunta
                 Challenge challenge = new Challenge(id, rs.getString("pregunta"));

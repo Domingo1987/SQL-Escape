@@ -133,26 +133,6 @@ public class SqlEvaluator {
         Logger.log("No se encontró coincidencia exacta");
         return false;
     }
-    public String resultSetAString(ResultSet rs) throws SQLException {
-        StringBuilder sb = new StringBuilder();
-        ResultSetMetaData metaData = rs.getMetaData();
-        int columnas = metaData.getColumnCount();
-
-        while (rs.next()) {
-            for (int i = 1; i <= columnas; i++) {
-                sb.append(metaData.getColumnName(i))
-                        .append(": ")
-                        .append(rs.getString(i));
-
-                if (i < columnas) {
-                    sb.append(", ");
-                }
-            }
-            sb.append("\\n"); // ⚠️ Importante: barra N, no salto real
-        }
-
-        return sb.toString();
-    }
 
 
     public EvaluationResult evaluateChallenge(String query, Challenge challenge) throws SQLException {
@@ -201,16 +181,41 @@ public class SqlEvaluator {
         try (Statement stmt = databaseConnectionSQLEscape.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
 
+            userResult.setResultSet(rs);
+            StringBuilder resultadoBuilder = new StringBuilder();
+
+            // Obtener metadatos para conocer nombres de columnas
+            int columnCount = rs.getMetaData().getColumnCount();
+
+            // Encabezados (nombres de columnas)
+            /*for (int i = 1; i <= columnCount; i++) {
+                resultadoBuilder.append(rs.getMetaData().getColumnName(i));
+                if (i < columnCount) resultadoBuilder.append("\t");
+            }
+            resultadoBuilder.append("\n");*/
+
+            // Filas del resultado
             while (rs.next()) {
-                String consulta = rs.getString("consulta");
-                Logger.logRed("xxxxxxxxxxxxxx" + consulta);
+                for (int i = 1; i <= columnCount; i++) {
+                    resultadoBuilder.append(rs.getString(i));
+                    if (i < columnCount) resultadoBuilder.append("\t");
+                }
+                resultadoBuilder.append("\n");
             }
 
+            String resultado = resultadoBuilder.toString();
+            System.out.println("Resultado:\n" + resultado);
+            Logger.logGreen(resultado);
+            userResult.setResult(resultado);
 
 
-        } catch (Exception e) {
-            Logger.logError("Error en output" + e.getMessage());
-            e.printStackTrace();
+
+        } catch (SQLException e) {
+            // Capturar y mostrar la excepción SQL
+            System.out.println("Error SQL:");
+            System.out.println("Mensaje: " + e.getMessage());
+            System.out.println("Código de error: " + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
         }
 
 
@@ -251,9 +256,9 @@ public class SqlEvaluator {
         //if (resultsMatch) {
             Logger.log("¡Los resultados coinciden!");
             eval = new EvaluationResult(true, challenge.getPoints());
-            String res = resultSetAString(userResult.getResultSet());
-            Logger.logGreen(res);
-            userResult.setResult(res);
+
+
+
             eval.setQueryResult(userResult);
             eval.setFeedback("¡Correcto! Tu consulta produce el resultado esperado.\n" +
                     "Consulta esperada: " + query);
