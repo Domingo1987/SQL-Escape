@@ -12,6 +12,7 @@ public class QueryResult {
     private String errorMessage;
     private long executionTime;
     private int rowCount;
+    private String result;
 
     public QueryResult(ResultSet resultSet) {
         Logger.log("QueryResult.<init>ResultSet");
@@ -48,5 +49,13 @@ public class QueryResult {
     public long getExecutionTime() {
         Logger.log("QueryResult.getExecutionTime");
         return executionTime;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getResult() {
+        return result;
     }
 }

@@ -5,7 +5,6 @@ import com.cerp.Logger;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -18,18 +17,14 @@ public class SwingGameView extends GameView {
     private JTextArea outputArea;
     private JButton submitButton;
 
-    private CountDownLatch latch;
-    private String userQuery;
-
     public SwingGameView() {
         Logger.log("SwingGameView.<init>");
-
         frame = new JFrame("SQL Escape");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
+        frame.setSize(500, 400);
         frame.setLayout(new BorderLayout());
 
-        levelArea = new JTextArea(5, 40);
+        levelArea = new JTextArea();
         levelArea.setEditable(false);
         frame.add(new JScrollPane(levelArea), BorderLayout.NORTH);
 
@@ -40,20 +35,9 @@ public class SwingGameView extends GameView {
         inputPanel.add(submitButton, BorderLayout.EAST);
         frame.add(inputPanel, BorderLayout.CENTER);
 
-        outputArea = new JTextArea(5, 40);
+        outputArea = new JTextArea();
         outputArea.setEditable(false);
         frame.add(new JScrollPane(outputArea), BorderLayout.SOUTH);
-
-        // Mostrar ventana
-        frame.setVisible(true);
-
-        // Agregamos el listener una sola vez
-        submitButton.addActionListener(e -> {
-            if (latch != null) {
-                userQuery = queryField.getText();
-                latch.countDown();
-            }
-        });
     }
 
     @Override
@@ -67,22 +51,27 @@ public class SwingGameView extends GameView {
         Logger.log("SwingGameView.showLevel");
         StringBuilder sb = new StringBuilder();
         sb.append("Nivel ").append(level.getNumber()).append(" - ")
-                .append(level.getTitle()).append("\n\n")
-                .append(level.getNarrative()).append("\n\n")
-                .append(level.getChallenge().getDescription());
+          .append(level.getTitle()).append("\n\n")
+          .append(level.getNarrative()).append("\n\n")
+          .append(level.getChallenge().getDescription());
         levelArea.setText(sb.toString());
+        frame.setVisible(true);
     }
 
     @Override
     public String getUserQuery() {
         Logger.log("SwingGameView.getUserQuery");
-        latch = new CountDownLatch(1);
-        queryField.setText(""); // Limpiar campo anterior
+        CountDownLatch latch = new CountDownLatch(1);
+        final String[] result = new String[1];
+        submitButton.addActionListener(e -> {
+            result[0] = queryField.getText();
+            latch.countDown();
+        });
         try {
-            latch.await(); // Esperar a que el usuario presione el botón
+            latch.await();
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
-        return userQuery;
+        return result[0];
     }
 }

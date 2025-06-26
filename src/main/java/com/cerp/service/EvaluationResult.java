@@ -47,4 +47,8 @@ public class EvaluationResult {
         Logger.log("EvaluationResult.getValidationResult");
         return validationResult;
     }
+
+    public void setQueryResult(QueryResult queryResult) {
+        this.queryResult = queryResult;
+    }
 }

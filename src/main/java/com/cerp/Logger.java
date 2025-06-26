@@ -34,6 +34,8 @@ public class Logger {
             System.out.println(RED + BOLD + "🧪 TEST: " + message + RESET);
         }
 
-
+    public static void logGreen(String message) {
+        System.out.println(GREEN + BOLD + message + RESET);
+    }
 
 }

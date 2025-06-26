@@ -9,6 +9,8 @@ import com.cerp.state.GameState;
 import com.cerp.state.StartState;
 import com.cerp.Logger;
 
+import java.sql.SQLException;
+
 /**
  * Core game class orchestrating players, levels and states.
  */
@@ -50,7 +52,7 @@ public class SqlEscapeGame {
         this.currentLevel = level;
     }
 
-    public EvaluationResult processPlayerInput(String query) {
+    public EvaluationResult processPlayerInput(String query) throws SQLException {
         Logger.log("SqlEscapeGame.processPlayerInput");
         // Evaluate query
         return sqlEvaluator.evaluateChallenge(query, currentLevel.getChallenge());

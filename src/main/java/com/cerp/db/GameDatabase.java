@@ -16,7 +16,7 @@ public class GameDatabase {
     private String username;
     private String password;
 
-    private GameDatabase(String url, String user, String pass) {
+    public GameDatabase(String url, String user, String pass) {
         this.connectionUrl = url;
         this.username = user;
         this.password = pass;
